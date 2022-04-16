@@ -75,10 +75,10 @@ public class HelloServlet extends HttpServlet {
                 msg = "Bonjour, ";
                 break;
             case "es":
-                msg = "Hola";
+                msg = "Hola, ";
                 break;
             case "jp":
-                msg = "Kon'nichiwa";
+                msg = "Kon'nichiwa, ";
                 break;
         }
         
@@ -135,10 +135,10 @@ public class HelloServlet extends HttpServlet {
                 msg = "Hallo, ";
                 break;
             case "es":
-                msg = "Hola";
+                msg = "Hola, ";
                 break;
             case "jp":
-                msg = "Kon'nichiwa";
+                msg = "Kon'nichiwa, ";
                 break;
         }
         
