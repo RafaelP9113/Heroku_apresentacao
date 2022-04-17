@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.time.LocalTime;
+import java.time.ZoneId;
 
 /**
  *
@@ -166,9 +167,9 @@ public class HelloServlet extends HttpServlet {
         
         msg = msg+nome+", ";
         
-        
+         ZoneId zone1 = ZoneId.of("GMT+9");
         LocalTime Tempo = LocalTime.now();
-        
+        LocalTime now2 = LocalTime.now(zone1);
         if(Tempo.getHour() >=0 && Tempo.getHour() <= 12){
         switch(lang){
             case "pt":
@@ -194,6 +195,7 @@ public class HelloServlet extends HttpServlet {
             switch(lang){
                 case "pt":
                     msg = msg + "Boa tarde !";
+                    msg = msg + now2;
                     break;
                 case "en":
                     msg = msg + "Good afternoon !";
@@ -248,7 +250,7 @@ public class HelloServlet extends HttpServlet {
             out.println("<title>Servlet HelloServlet</title>");            
             out.println("</head>");
             out.println("<body style=\"background-color:lightgray;\">");
-            out.println("<h1>Desenvolvimento de Aplicações Corporativas</h1>");
+            out.println("<h1 style=\"color:red;\">Desenvolvimento de Aplicações Corporativas</h1>");
             out.println("<p style=\"color:red;\">" + msg + "</p>");
             out.println("</body>");
             out.println("</html>");
