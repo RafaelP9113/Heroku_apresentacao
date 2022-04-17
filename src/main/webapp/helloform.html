@@ -12,27 +12,27 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
    
     </head>
-    <body style="background-color:gray;">
+    <body style="background-color:lightgray;">
          
-        <div style="color:red;">Formulário de HelloWorld (usando o HelloServlet.java)</div>
+        <div style="color:red;" >Formulário de HelloWorld (usando o HelloServlet.java)</div>
         
         <form action="alomundo" method="post">
             <div>
-                    <label><b style="color:red;"> Vocativo </b></label>
+                    <label><b style="color:red;" > Vocativo </b></label>
                     <div >
                         <input  type="radio" value="nn"   name="voca" checked ><label style="color:red;"> Nenhum </label>
-                        <input type="radio" value="Sr."  name="voca"> Sr.
-                        <input type="radio" value="Sra." name="voca"> Sra.
+                        <input type="radio" value="Sr."  name="voca"><label style="color:red;"> Sr. </label> 
+                        <input type="radio" value="Sra." name="voca"><label style="color:red;"> Sra. </label> 
                     </div>
                 </div>
         
            
-           <br>Idioma: <input type="radio" name="lang" value="pt" checked> Português
-           <input type="radio" name="lang" value="en"> Inglês
-           <input type="radio" name="lang" value="fr"> Francês
-           <input type="radio" name="lang" value="de"> Alemão
-           <input type="radio" name="lang" value="es"> Espanhol
-           <input type="radio" name="lang" value="jp"> Japonês<br><br>
+           <br><label style="color:red;">  Idioma: </label> <input type="radio" name="lang" value="pt" checked><label style="color:red;"> Português </label> 
+           <input type="radio" name="lang" value="en"><label style="color:red;"> Inglês </label> 
+           <input type="radio" name="lang" value="fr"><label style="color:red;"> Francês </label> 
+           <input type="radio" name="lang" value="de"><label style="color:red;"> Alemão </label> 
+           <input type="radio" name="lang" value="es"><label style="color:red;"> Espanhol </label> 
+           <input type="radio" name="lang" value="jp"><label style="color:red;"> Japonês </label> <br><br>
            Nome: <input type="text" name="nome"/><br><br>
            <input type="submit" value="Cumprimentar"/>
         </form>
