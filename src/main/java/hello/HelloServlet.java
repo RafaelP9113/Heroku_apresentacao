@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.LocalTime;
 
 /**
  *
@@ -142,13 +143,102 @@ public class HelloServlet extends HttpServlet {
                 break;
         }
         
+        String voca = request.getParameter("voca");
+        if(voca == null)
+            voca = "";
+        
+        switch(voca){
+            case "nn":
+                msg = msg + "";
+                break;
+            case "Sr.":
+                msg = msg + "Sr. ";
+                break;
+            case "Sra.":
+                msg = msg + "Sra. ";
+                break;
+        }
+        
         String nome = request.getParameter("nome");
 
         if(nome==null)
             nome = "Fulano";
         
-        msg = msg+nome+"!";
+        msg = msg+nome+", ";
+        
+        
+        LocalTime Tempo = LocalTime.now();
+        
+        if(Tempo.getHour() >=0 && Tempo.getHour() <= 12){
+        switch(lang){
+            case "pt":
+                msg = msg + "Bom dia !";
+                break;
+            case "en":
+                msg = msg + "Good morning !";
+                break;
+            case "fr":
+                msg = msg + "Bon matin !";
+                break;
+            case "de":
+                msg = msg + "Guten morgen !";
+                break;
+            case "es":
+                msg = msg + "Buen día !";
+                break;
+            case "jp":
+                msg = msg + "Ohayō !";
+                break;
+        }
+        }else if (Tempo.getHour() > 12 && Tempo.getHour() <= 18) {
+            switch(lang){
+                case "pt":
+                    msg = msg + "Boa tarde !";
+                    break;
+                case "en":
+                    msg = msg + "Good afternoon !";
+                    break;
+                case "fr":
+                    msg = msg + "Bon après-midi !";
+                    break;
+                case "de":
+                    msg = msg + "Guten tag !";
+                    break;
+                case "es":
+                    msg = msg + "Buenas tardes !";
+                    break;
+                case "jp":
+                    msg = msg + "Kon'nichiwa !";
+                    break;
+            }
+        } else {
+            switch(lang){
+                case "pt":
+                    msg = msg + "Boa noite !";
+                    break;
+                case "en":
+                    msg = msg + "Good night !";
+                    break;
+                case "fr":
+                    msg = msg + "Bonne nuit !";
+                    break;
+                case "de":
+                    msg = msg + "Gute nacht !";
+                    break;
+                case "es":
+                    msg = msg + "Buenas noches !";
+                    break;
+                case "jp":
+                    msg = msg + "Oyasuminasai !";
+                    break;
+            }
+        }
+        
 
+
+        
+        
+        
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
